@@ -1,8 +1,10 @@
 import sqlite3
 from flask import Flask, jsonify
+from flask_cors import CORS
 from handle_request import handle_request
 
 app = Flask(__name__)
+CORS(app)
 
 
 # This endpoint returns all the healthcare centers from the lagos_facilities table
@@ -16,8 +18,10 @@ def health_centers():
   '''
 
   data = handle_request(get_query)
+  data = jsonify(data)
+  data.headers.add("Access-Control-Allow-Origin", "*")
 
-  return jsonify(data)
+  return data
 
 
 
@@ -32,8 +36,10 @@ def local_govt():
   SELECT * FROM medics;
   '''
   data = handle_request(get_query)
+  data = jsonify(data)
+  data.headers.add("Access-Control-Allow-Origin", "*")
 
-  return jsonify(data)
+  return data
 
 
 
