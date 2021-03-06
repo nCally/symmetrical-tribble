@@ -6,7 +6,7 @@ import sqlite3
 # handles opening the sqlite database, running the query and closing the connection after retrieval of the data
 
 def handle_request(query):
-  conn = sqlite3.connect('db.db')
+  conn = sqlite3.connect('./server/db.db')
   cursor = conn.cursor()
   cursor.row_factory = sqlite3.Row
 

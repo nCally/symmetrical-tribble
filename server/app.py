@@ -19,7 +19,6 @@ def health_centers():
 
   data = handle_request(get_query)
   data = jsonify(data)
-  data.headers.add("Access-Control-Allow-Origin", "*")
 
   return data
 
@@ -37,10 +36,20 @@ def local_govt():
   '''
   data = handle_request(get_query)
   data = jsonify(data)
-  data.headers.add("Access-Control-Allow-Origin", "*")
 
   return data
 
+
+@app.route('/population')
+def population():
+
+  get_query = '''
+  SELECT * FROM population;
+  '''
+  data = handle_request(get_query)
+  data = jsonify(data)
+
+  return data
 
 
 
