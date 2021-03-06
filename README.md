@@ -10,3 +10,11 @@ Flask + SQLite3
 - Run the code with `python app.py`
 
 *Sqlite comes with your installation of python*
+
+
+### UI
+The UI as built with React.js
+
+- Make sure Node js is installed on your computer
+- Run `yarn install` to install project dependencies
+- Run `yarn start` on the working directory
